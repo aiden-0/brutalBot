@@ -37,8 +37,8 @@ def getPuuid(name, tag):
 def getMatchid(region, name, tag):
     url = f"https://api.henrikdev.xyz/valorant/v3/matches/{region}/{name}/{tag}?mode=competitive&size=1"
     response = requests.get(url, headers=headers)
-    if(response.status_code == 404):
-        return 404
+    if(response.status_code == 404 or response.status_code == 404):
+        return 500
     elif(response.status_code == 200):
         return{'matchid': response.json()['data'][0]['metadata']['matchid'],
                 'remaining': int(response.headers.get('x-ratelimit-remaining')),
@@ -60,7 +60,7 @@ def latestMatchStats(region,name,tag):
                 outcome = "won"
             else:
                 outcome = "lost"
-                score = str(response.json()['data'][0]['teams'][teamColor]['rounds_won']) + "-" + str(response.json()['data'][0]['teams'][teamColor]['rounds_'])
+                score = str(response.json()['data'][0]['teams'][teamColor]['rounds_won']) + "-" + str(response.json()['data'][0]['teams'][teamColor]['rounds_lost'])
             return{ # returns a dictionary, with all the stats of the latest match.
                 'agent': player['character'],
                 'agentpic': player['assets']['agent']['small'],
@@ -86,25 +86,3 @@ def addUser(name, tag, region):
     else:
         data.insert_one({"name": name,"tag": tag,"matchID": matchID, "region": region})
         return("sucessfully added")
-
-
-
-
-
-
-
-
-
-
-
-        
-        
-    
-
-
-
-
- 
-
-
-     

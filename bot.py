@@ -71,8 +71,8 @@ async def latest_match(ctx,*,input: str):
     nameList = info[:size -2]
     name = " ".join(nameList)
     matchID_info = getMatchid(region, name, tag)
-    if(matchID_info == 404):
-        await ctx.send("Error fetching, double check spelling")
+    if(matchID_info == 500):
+        await ctx.send("Error fetching, double check spelling, or api might be down. Try again later")
         return
     elif(matchID_info == None):
         await ctx.send(f"Was not able to find {name}#{tag}. Make sure typed correctly")
@@ -108,8 +108,8 @@ async def addUser(ctx,*,input: str):
     nameList = info[:size -2]
     name = " ".join(nameList)
     matchID_info = getMatchid(region, name, tag)
-    if(matchID_info == 404):
-        await ctx.send("Error with api, double check spelling")
+    if(matchID_info == 500):
+        await ctx.send("Error with api, double check spelling, or api might be down :/")
         return
 
     matchID = matchID_info['matchid']
