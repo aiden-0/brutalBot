@@ -89,11 +89,7 @@ def addUser(name, tag, region):
 
 
 
-# testing api call times
-# start = time.time()
-# print(type((getMatchid("na","chaewon buff", "4885")['remaining'])))
-# end = time.time()
-# print(end-start)
+
 
 
 
