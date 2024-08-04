@@ -17,7 +17,10 @@ Display latest competitive match stats for user. Command is CASE-sensitive.
 
 ## Info
 These are region codes. 
+
 ![image](https://github.com/user-attachments/assets/91e01de2-1c95-426c-8a40-ac1f0313cd52)
+
+
 
 
 
