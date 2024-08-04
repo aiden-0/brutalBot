@@ -9,11 +9,17 @@ brutalBot is a discord bot that tracks valorant players competitive games manual
 ```
 /adduser {riot name} {tag} {region}
 ```
-Will add user to the tracker and notfies and displays stats when user just finished a competitive game in channel used in.
+Will add user to the tracker and notfies and displays stats when user just finished a competitive game in channel used in. Command is CASE-sensitive.
 ```
 /latestmatch {riot name} {tag} {region}
 ```
-Display latest competitive match stats for user. 
+Display latest competitive match stats for user. Command is CASE-sensitive. 
+
+##Info
+![image](https://github.com/user-attachments/assets/91e01de2-1c95-426c-8a40-ac1f0313cd52)
+These are region codes. 
+
+
 
 
 
